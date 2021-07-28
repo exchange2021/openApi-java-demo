@@ -12,13 +12,13 @@ public class SendGet {
      * GET请求方式
      */
 
-    private static String apiKey = "";
-    private static  String secret = "";
+    private static String apiKey = "ab7a8bb76f05a3aff70d75bd3c079330";
+    private static  String secret = "d7f1f2ff4498f212d77f5220fd981c8c";
 
     public static void main(String[] args) throws Exception {
         String timestemp = String.valueOf(System.currentTimeMillis());
-        String sign  = Signature.toSign(timestemp, "GET", "/sapi/v1/", "", "", secret);
-        String url = "https://openapi.xxx.com/sapi/v1/";
+        String sign  = Signature.toSign(timestemp, "GET", "/sapi/v1/ping", "", "", secret);
+        String url = "https://openapi.xfnh.com/sapi/v1/ping";
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
