@@ -18,7 +18,7 @@ public class PlaceUtilt {
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("application/json");
 
-        Map<String, Object> param = new HashMap<>();
+        Map<String, Object> param = new HashMap<String, Object>();
         param.put("symbol", "xfnhusdt");
         param.put("volume", "1");
         param.put("side", "SELL");
@@ -26,7 +26,7 @@ public class PlaceUtilt {
         param.put("price", "1");
 
         String timestemp = String.valueOf(System.currentTimeMillis());
-        String sign  = com.spot.utils.Signature.toSign(timestemp, "POST", "/sapi/v1/order", "", JSON.toJSONString(param), secret);
+        String sign  = Signature.toSign(timestemp, "POST", "/sapi/v1/order", "", JSON.toJSONString(param), secret);
         RequestBody body = RequestBody.create(mediaType, JSON.toJSONString(param));
         Request request = new Request.Builder()
                 .url("https://openapi.xxx.com/sapi/v1/order")
