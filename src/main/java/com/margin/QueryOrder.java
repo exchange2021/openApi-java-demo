@@ -11,7 +11,7 @@ import static org.apache.http.HttpHeaders.USER_AGENT;
 
 public class QueryOrder {
     /**
-     * GET请求方式/ 订单查询
+     * GET请求方式/杠杆订单查询
      * GET Request method/Query Order
      */
 
