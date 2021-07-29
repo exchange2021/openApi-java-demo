@@ -1,4 +1,6 @@
-package com.utils;
+package com.spot;
+
+import com.utils.Signature;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -7,18 +9,19 @@ import java.net.URL;
 
 import static org.apache.http.HttpHeaders.USER_AGENT;
 
-public class SendGet {
+public class Ticker {
     /**
-     * GET请求方式
+     * GET请求方式/行情ticker
+     * GET Request method/24hrs ticker
      */
 
-    private static String apiKey = "ab7a8bb76f05a3aff70d75bd3c079330";
-    private static  String secret = "d7f1f2ff4498f212d77f5220fd981c8c";
+    private static String apiKey = "Please enter your Apikey";
+    private static  String secret = "Please enter your Secret";
 
     public static void main(String[] args) throws Exception {
         String timestemp = String.valueOf(System.currentTimeMillis());
-        String sign  = Signature.toSign(timestemp, "GET", "/sapi/v1/ping", "", "", secret);
-        String url = "https://openapi.xfnh.com/sapi/v1/ping";
+        String sign  = Signature.toSign(timestemp, "GET", "/sapi/v1/depth", "", "", secret);
+        String url = "https://openapi.xxx.com/sapi/v1/ticker?symbol=btcusdt";
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
