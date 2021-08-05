@@ -11,8 +11,8 @@ import static org.apache.http.HttpHeaders.USER_AGENT;
 
 public class KlineCandlestickData {
     /**
-     * GET请求方式/最近成交
-     * GET Request method/Recent Trades List
+     * GET请求方式/K线/蜡烛图数据
+     * GET Request method/Kline/candlestick data
      */
 
     private static String apiKey = "Please enter your Apikey";
